@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 //import cx from 'classnames';
 
 //import styles from '../Cards/Cards.module.css';
+import CountUp from 'react-countup';
 
 class indiaCard extends Component {
   constructor(props) {
@@ -27,10 +28,10 @@ class indiaCard extends Component {
             <div className="card-body cardDiv cardBorder">
               
               <h3 className="card-title cardDiv"><strong className="cardDiv">{this.props.name} Report </strong></h3>
-              {this.props.data.confirmed !== null ? <h4 className="card-text cardDiv">Confirmed : {this.props.data.confirmed }</h4> : ""}
-              {this.props.data.recovered !== null ? <h4 className="card-text cardDiv">Recovered : {this.props.data.recovered }</h4> : ""}
-              {this.props.data.active !== undefined ? <h4 className="card-text cardDiv">Active : {this.props.data.active }</h4> : ""}
-              {this.props.data.deaths !== null ? <h4 className="card-text cardDiv">Deaths : {this.props.data.deaths }</h4> : ""}
+              {this.props.data.confirmed !== null ? <h4 className="card-text cardDiv">Confirmed : <CountUp className="cardDiv" start={0} end={this.props.data.confirmed} duration={2.75} separator="," /></h4> : ""}
+              {this.props.data.recovered !== null ? <h4 className="card-text cardDiv">Recovered : <CountUp className="cardDiv" start={0} end={this.props.data.recovered} duration={2.75} separator="," /></h4> : ""}
+              {this.props.data.active !== undefined ? <h4 className="card-text cardDiv">Active : <CountUp className="cardDiv" start={0} end={this.props.data.active} duration={2.75} separator="," /></h4> : ""}
+              {this.props.data.deaths !== null ? <h4 className="card-text cardDiv">Deaths : <CountUp className="cardDiv" start={0} end={this.props.data.deaths} duration={2.75} separator="," /></h4> : ""}
 
             </div>
           </div>
