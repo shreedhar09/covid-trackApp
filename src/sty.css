@@ -1,0 +1,39 @@
+.headerName {
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    background-color: #F5F5DC;
+    box-sizing: border-box;
+  }
+  .cardSize {
+    width: 500px;
+    height: 280px;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+
+
+  }
+  .selectVal{
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 20px;
+  }
+
+  .cardDiv {
+      background-color: #87CEFA;
+    
+  }
+
+  .cardBorder {
+
+    border: 1px solid;
+}
+.backbtn{
+    text-align: Right;
+}

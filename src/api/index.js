@@ -5,10 +5,37 @@ export const fetchData = async (country) => {
   let changeableUrl = url;
 
   try {
-    console.log("ccc ",changeableUrl)
+    
     const { data: { confirmed, recovered, deaths, lastUpdate } } = await axios.get(changeableUrl);
 
     return { confirmed, recovered, deaths, lastUpdate };
+  } catch (error) {
+    return error;
+  }
+};
+export const fetchStateData = async (country) => {
+  let changeableUrl = 'https://api.covidindiatracker.com/state_data.json';
+  let countryUrl = 'https://api.covidindiatracker.com/total.json';
+  try {
+  
+    const stateData = await axios.get(changeableUrl);
+    const countryData = await axios.get(countryUrl);
+   // const sadsa = await countryData.data
+
+    return {stateData, countryData};
+  } catch (error) {
+    return error;
+  }
+};
+
+export const fetchStateName = async (country) => {
+  let changeableUrl = 'https://api.covidindiatracker.com/state_data.json';
+  
+  try {
+  
+    const stateNames = await axios.get(changeableUrl);
+    const stateName = await stateNames.data;
+    return stateName;
   } catch (error) {
     return error;
   }
